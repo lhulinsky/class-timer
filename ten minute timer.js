@@ -6,7 +6,10 @@ var lateStartClassEndTimes=[[11,0],[11,34],[12,08],[12,40],[13,14],[13,48],[14,2
 var alertMode=false;
 var bellOffset=Math.floor(getSchoolBellOffset());
 var dayType="normal";
+var alarmAudio=new Audio("alarm_clock.mp3");
+var alarmHasRung=false;
 function changeDay(){
+	alarmHasRung=false;
 	if(dayType=="normal"){
 		dayButton.innerHTML="Advisory Day";
 		dayType="advisory";
@@ -88,11 +91,14 @@ function updateTimer(){
 		hours+=24
 	}
 	
-	if(minutes<10 && hours==0){
+	if(minutes<10 && hours==0 && !alarmHasRung){
 		alertMode=true;
+		alarmHasRung=true;
+		alarmAudio.play();
 	}
 	else{
 		alertMode=false;
+		alarmHasRung=false;
 	}
 	
 	if(seconds<10){
