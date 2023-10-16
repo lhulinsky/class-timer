@@ -130,6 +130,7 @@ function updateAlertDisplay(){
 
 function startTimer(){
 	timerDisplay.style.display="block";
+	document.getElementById("startButton").style.display="none";
 	updateTimer();
 	setInterval(updateTimer,1000);
 	requestAnimationFrame(updateAlertDisplay);
