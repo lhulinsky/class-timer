@@ -117,8 +117,7 @@ function updateTimer(){
 		timerDisplay.innerHTML=minutes+":"+seconds
 	}
 }
-updateTimer();
-setInterval(updateTimer,1000);
+
 function updateAlertDisplay(){
 	if(alertMode){
 		timerDisplay.style.color="red";
@@ -128,4 +127,10 @@ function updateAlertDisplay(){
 	}
 	requestAnimationFrame(updateAlertDisplay);
 }
-requestAnimationFrame(updateAlertDisplay);
+
+function startTimer(){
+	timerDisplay.style.display="block";
+	updateTimer();
+	setInterval(updateTimer,1000);
+	requestAnimationFrame(updateAlertDisplay);
+}
