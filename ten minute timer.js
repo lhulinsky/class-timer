@@ -1,6 +1,6 @@
 var timerDisplay=document.getElementById("timerDisplay");
-var normalClassEndTimes=[[9,15],[10,4],[10,53],[11,42],[12,31],[13,3],[13,52],[14,41],[15,30]];
-var advisoryClassEndTimes=[[9,12],[9,58],[10,22],[11,8],[11,54],[12,40],[13,12],[13,58],[14,44],[16,27]];
+var normalClassEndTimes=[[9,15],[10,4],[10,53],[11,42],[12,31],[13,3],[13,52],[14,41],[16,29]];
+var advisoryClassEndTimes=[[9,12],[9,58],[10,22],[11,8],[11,54],[12,40],[13,12],[13,58],[14,44],[15,30]];
 var earlyOutClassEndTimes=[[9,0],[9,34],[10,8],[10,42],[11,16],[11,50],[12,23],[12,56],[13,30]];
 var lateStartClassEndTimes=[[11,0],[11,34],[12,8],[12,40],[13,14],[13,48],[14,22],[14,56],[15,30]];
 var alertMode=false;
