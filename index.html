@@ -5,11 +5,14 @@
 	</head>
 	<body>
 		<p id="timerDisplay">Plenty of time</p>
-		<button id="startButton">Start Timer</button>
+		<button id="startButton" onclick="startTimer();" >Start Timer</button>
 		<button id="dayButton" onclick="changeDay()">Normal Day</button>
 		<script src="https://lhulinsky.github.io/gameswebsite/school%20bell%20offset.js"></script>
 		<script src="ten minute timer.js"></script>
 		<style>
+			body{
+				text-align:center;
+			}
 			#timerDisplay{
 				font-size:18vw;
 				text-align:center;
@@ -34,13 +37,14 @@
                 background-color: #B0B0B0;
             }
 			#startButton{
-                padding: 10px;
+                padding: 20px;
                 text-align: center;
 				margin:auto;
                 background-color: #dbdbdb;
+				border:none;
 				border-radius: 4px;
                 outline: 0;
-                font-size: 10vw;
+                font-size: 9vw;
             }
 			#startButton:hover{
                 background-color: #c7c7c7;
