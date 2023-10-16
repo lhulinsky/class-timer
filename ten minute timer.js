@@ -10,7 +10,6 @@ var alarmAudio=new Audio("alarm_clock.mp3");
 var alarmHasRung=false;
 function changeDay(){
 	alarmHasRung=false;
-	alertMode=false;
 	if(dayType=="normal"){
 		dayButton.innerHTML="Advisory Day";
 		dayType="advisory";
@@ -123,6 +122,9 @@ setInterval(updateTimer,1000);
 function updateAlertDisplay(){
 	if(alertMode){
 		timerDisplay.style.color="red";
+	}
+	else{
+		timerDisplay.style.color="black";
 	}
 	requestAnimationFrame(updateAlertDisplay);
 }
