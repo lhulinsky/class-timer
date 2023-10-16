@@ -91,7 +91,7 @@ function updateTimer(){
 		hours+=24
 	}
 	
-	if(minutes<10 && hours==0 &&){
+	if(minutes<10 && hours==0){
 		alertMode=true;
 		if(!alarmHasRung){
 			alarmHasRung=true;
