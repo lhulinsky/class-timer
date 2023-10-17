@@ -6,7 +6,7 @@ var lateStartClassEndTimes=[[11,0],[11,34],[12,8],[12,40],[13,14],[13,48],[14,22
 var alertMode=false;
 var bellOffset=Math.floor(getSchoolBellOffset());
 var dayType="normal";
-var alarmAudio=new Audio("alarm_clock.mp3");
+var alarmAudio=new Audio("rick roll.mp3");
 var alarmHasRung=false;
 function changeDay(){
 	alarmHasRung=false;
@@ -25,7 +25,6 @@ function changeDay(){
 	else if(dayType=="late start"){
 		dayButton.innerHTML="Normal Day";
 		dayType="normal";
-		alarmAudio=new Audio("rick roll.mp3");
 	}
 	updateTimer();
 }
