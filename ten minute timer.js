@@ -6,7 +6,7 @@ var lateStartClassEndTimes=[[11,0],[11,34],[12,8],[12,40],[13,14],[13,48],[14,22
 var alertMode=false;
 var bellOffset=Math.floor(getSchoolBellOffset());
 var dayType="normal";
-var alarmAudio=new Audio("Hot Wings (I Wanna Party).mp3");
+var alarmAudio=new Audio("Here Comes The Sun.mp3");
 var alarmHasRung=false;
 function changeDay(){
 	alarmHasRung=false;
