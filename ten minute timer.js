@@ -26,7 +26,6 @@ function changeDay(){
 		dayButton.innerHTML="Normal Day";
 		dayType="normal";
 	}
-	updateTimer();
 }
 
 function updateTimer(){
