@@ -3,11 +3,13 @@ var normalClassEndTimes=[[9,15],[10,4],[10,53],[11,42],[12,31],[13,3],[13,52],[1
 var advisoryClassEndTimes=[[9,12],[9,58],[10,22],[11,8],[11,54],[12,40],[13,12],[13,58],[14,44],[15,30]];
 var earlyOutClassEndTimes=[[9,0],[9,34],[10,8],[10,42],[11,16],[11,50],[12,23],[12,56],[13,30]];
 var lateStartClassEndTimes=[[11,0],[11,34],[12,8],[12,40],[13,14],[13,48],[14,22],[14,56],[15,30]];
-var alertMode=false;
+var redTextMode=false;
 var bellOffset=Math.floor(getSchoolBellOffset());
 var dayType="normal";
 var alarmAudio=new Audio("Jupiter.mp3");
 var alarmHasRung=false;
+
+//change what schedule is used when the button is pressed
 function changeDay(){
 	alarmHasRung=false;
 	if(dayType=="normal"){
@@ -31,6 +33,7 @@ function changeDay(){
 function updateTimer(){
 	var time=new Date();
 	time=new Date(time.getTime()+bellOffset*1000);
+	
 	var classEndTimes=normalClassEndTimes;
 	if(dayType=="advisory"){
 		classEndTimes=advisoryClassEndTimes;
@@ -41,6 +44,7 @@ function updateTimer(){
 	else if(dayType=="late start"){
 		classEndTimes=lateStartClassEndTimes;
 	}
+	
 	var currentHour=time.getHours();
 	var currentMinute=time.getMinutes();
 	var classIndex=0;
@@ -91,14 +95,14 @@ function updateTimer(){
 	}
 	
 	if(minutes<10 && hours==0){
-		alertMode=true;
+		redTextMode=true;
 		if(!alarmHasRung){
 			alarmHasRung=true;
 			alarmAudio.play();
 		}
 	}
 	else{
-		alertMode=false;
+		redTextMode=false;
 		alarmHasRung=false;
 	}
 	
@@ -119,8 +123,9 @@ function updateTimer(){
 	}
 }
 
-function updateAlertDisplay(){
-	if(alertMode){
+//text turns red when time is less than 10 min
+function updateTextColor(){
+	if(redTextMode){
 		timerDisplay.style.color="red";
 	}
 	else{
@@ -134,5 +139,5 @@ function startTimer(){
 	document.getElementById("startButton").style.display="none";
 	updateTimer();
 	setInterval(updateTimer,1000);
-	requestAnimationFrame(updateAlertDisplay);
+	requestAnimationFrame(updateTextColor);
 }
