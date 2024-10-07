@@ -134,7 +134,7 @@ function updateTextColor(){
 	else{
 		timerDisplay.style.color="black";
 	}
-	requestAnimationFrame(updateAlertDisplay);
+	requestAnimationFrame(updateTextColor);
 }
 
 function startTimer(){
